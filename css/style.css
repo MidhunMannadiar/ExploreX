@@ -1,0 +1,213 @@
+/* =====================================================
+   ROOT / GLOBAL
+===================================================== */
+:root {
+  --primary-color: #0d6efd;
+  --dark-bg: #111827;
+  --dark-surface: #1f2937;
+  --dark-text: #e5e7eb;
+  --dark-muted: #9ca3af;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: #212529;
+  background: #fff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Prevent content from hiding under fixed navbar */
+section,
+header {
+  scroll-margin-top: 80px;
+}
+
+/* =====================================================
+   NAVBAR
+===================================================== */
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+.navbar-brand {
+  letter-spacing: 0.5px;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(13,110,253,0.35), rgba(0,0,0,0.65)),
+    url("/Images/background.jpg")
+      center/cover no-repeat;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================================================
+   CARDS
+===================================================== */
+.destination-card,
+.package-card {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  overflow: hidden;
+}
+
+.destination-card:hover,
+.package-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.12);
+}
+
+.destination-card img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.package-card.featured {
+  border: 2px solid rgba(13, 110, 253, 0.18);
+}
+
+/* =====================================================
+   FEATURES
+===================================================== */
+.feature-box {
+  border-radius: 1rem;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+}
+
+.feature-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 1.75rem;
+  color: var(--primary-color);
+  background: rgba(13, 110, 253, 0.1);
+}
+
+/* =====================================================
+   TESTIMONIALS
+===================================================== */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer {
+  background: #0f172a;
+  color: #fff;
+}
+
+.social-link {
+  color: #cbd5e1;
+  margin-left: 0.75rem;
+  font-size: 1.15rem;
+  transition: color 0.2s ease;
+}
+
+.social-link:hover {
+  color: #fff;
+}
+
+/* =====================================================
+   DARK THEME
+===================================================== */
+body.dark {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+body.dark .bg-light-subtle {
+  background: rgba(255, 255, 255, 0.04) !important;
+}
+
+body.dark .card,
+body.dark .feature-box,
+body.dark .hero-card {
+  background: var(--dark-surface);
+  color: var(--dark-text);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+body.dark .text-muted {
+  color: var(--dark-muted) !important;
+}
+
+body.dark .footer {
+  background: #0b1220;
+}
+
+/* =====================================================
+   MEDIA QUERIES
+===================================================== */
+@media (max-width: 991.98px) {
+  .hero-section {
+    text-align: center;
+  }
+
+  .hero-section .btn {
+    margin-bottom: 0.75rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .hero-section {
+    min-height: 92vh;
+  }
+
+  .destination-card img {
+    height: 200px;
+  }
+
+  .display-4 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .display-4 {
+    font-size: 1.95rem;
+  }
+
+  .hero-section .btn {
+    width: 100%;
+  }
+
+  .social-link {
+    margin: 0 0.35rem;
+  }
+}
